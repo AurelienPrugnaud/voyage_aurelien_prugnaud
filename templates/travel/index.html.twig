@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travel index{% endblock %}
+
+{% block body %}
+    <h1>Travel index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Hook</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Image1</th>
+                <th>Image2</th>
+                <th>Image3</th>
+                <th>Pdf</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for travel in travel %}
+            <tr>
+                <td>{{ travel.id }}</td>
+                <td>{{ travel.name }}</td>
+                <td>{{ travel.hook }}</td>
+                <td>{{ travel.description }}</td>
+                <td>{{ travel.price }}</td>
+                <td>{{ travel.duration }}</td>
+                <td>{{ travel.image1 }}</td>
+                <td>{{ travel.image2 }}</td>
+                <td>{{ travel.image3 }}</td>
+                <td>{{ travel.pdf }}</td>
+                <td>
+                    <a href="{{ path('travel_show', {'id': travel.id}) }}">show</a>
+                    <a href="{{ path('travel_edit', {'id': travel.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('travel_new') }}">Create new</a>
+{% endblock %}

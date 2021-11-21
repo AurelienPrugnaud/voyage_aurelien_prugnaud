@@ -160,4 +160,9 @@ class TravelController extends AbstractController
 
         return $this->redirectToRoute('travel_index', [], Response::HTTP_SEE_OTHER);
     }
+
+	public function priceFortwo(Travel $travel) {
+		$priceForTwo = ($price * 2);
+		return $priceForTwo;
+	}
 }

@@ -8,15 +8,19 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ travel.id }}</td>
+                <th>Image</th>
+                <td><img src="{{ asset('images/')}}{{ travel.image1 }} " alt=""></td>
             </tr>
             <tr>
                 <th>Name</th>
                 <td>{{ travel.name }}</td>
             </tr>
             <tr>
-                <th>Hook</th>
+                <th>Catégorie</th>
+                {#<td>{{ travel.category }}</td>#}
+            </tr>
+            <tr>
+                <th>Accroche</th>
                 <td>{{ travel.hook }}</td>
             </tr>
             <tr>
@@ -24,7 +28,15 @@
                 <td>{{ travel.description }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix par personne</th>
+                <td>{{ travel.price }}</td>
+            </tr>
+            <tr>
+                <th>Prix pour deux personne</th>
+                {#<td>{{ priceForTwo() }}</td>#}
+            </tr>
+            <tr>
+                <th>Prix pour quatres personne</th>
                 <td>{{ travel.price }}</td>
             </tr>
             <tr>
@@ -32,16 +44,16 @@
                 <td>{{ travel.duration }}</td>
             </tr>
             <tr>
-                <th>Image1</th>
-                <td>{{ travel.image1 }}</td>
+                <th>Image</th>
+                <td><img src="{{ asset('images/') }}{{ travel.image2 }}" alt=""></td>
             </tr>
             <tr>
-                <th>Image2</th>
-                <td>{{ travel.image2 }}</td>
+                <th>Image</th>
+                <td><img src="{{ asset('images/') }}{{ travel.image3 }}" alt=""></td>
             </tr>
             <tr>
-                <th>Image3</th>
-                <td>{{ travel.image3 }}</td>
+                <th>Tag</th>
+                {#<td>{{ travel.tag }}</td>#}
             </tr>
             <tr>
                 <th>Pdf</th>

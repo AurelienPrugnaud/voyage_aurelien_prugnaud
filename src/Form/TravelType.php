@@ -8,6 +8,7 @@ use App\Entity\Travel;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
@@ -20,7 +21,7 @@ class TravelType extends AbstractType
         $builder
             ->add('name')
             ->add('hook')
-            ->add('description')
+            ->add('description', TextareaType::class)
             ->add('price')
             ->add('duration')
 			->add('image1', FileType::class, [

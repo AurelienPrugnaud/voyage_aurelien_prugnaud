@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Catégorie</th>
-                {#<td>{{ travel.category }}</td>#}
+                <td>{{ travel.category.name }}</td>
             </tr>
             <tr>
                 <th>Accroche</th>
@@ -33,11 +33,11 @@
             </tr>
             <tr>
                 <th>Prix pour deux personne</th>
-                {#<td>{{ priceForTwo() }}</td>#}
+                <td>{{ travel.price * 2 }} </td>
             </tr>
             <tr>
                 <th>Prix pour quatres personne</th>
-                <td>{{ travel.price }}</td>
+                <td>{{ travel.price * 4 }}</td>
             </tr>
             <tr>
                 <th>Duration</th>
@@ -53,11 +53,13 @@
             </tr>
             <tr>
                 <th>Tag</th>
-                {#<td>{{ travel.tag }}</td>#}
+                {% for tag in travel.tag %}
+                    <td>{{ tag.name }}</td>
+                {% endfor %}
             </tr>
             <tr>
                 <th>Pdf</th>
-                <td>{{ travel.pdf }}</td>
+                <td><a href="{{ asset('pdf/') }}{{ travel.pdf }}">PDF téléchargeable</a></td>
             </tr>
         </tbody>
     </table>

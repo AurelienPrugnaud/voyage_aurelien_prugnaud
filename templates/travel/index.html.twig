@@ -22,8 +22,10 @@
             <tr>
                 <td><img src="{{ asset('images/')}}{{ travel.image1 }} " alt=""></td>
                 <td>{{ travel.name }}</td>
-                {#<td>{{ travel.category }}</td>
-                <td>{{ travel.tag }}</td>#}
+                <td>{{ travel.category.name }}</td>
+                {% for tag in travel.tag %}
+                    <td>{{ tag.name }}</td>
+                {% endfor %}
                 <td>{{ travel.hook }}</td>
                 <td>{{ travel.price }}</td>
                 <td>

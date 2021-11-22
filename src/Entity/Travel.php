@@ -6,6 +6,7 @@ use App\Repository\TravelRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TravelRepository::class)
@@ -21,32 +22,43 @@ class Travel
 
     /**
      * @ORM\Column(type="string", length=255)
+	 * @Assert\NotBlank (message = "la destination doit être renseigner.")
+	 * @Assert\Length(
+	 *     min = 3,
+	 *     max = 25,
+	 *     minMessage = "La destination doit comporté {{ limit }} caractère minimum.",
+	 *     maxMessage = "La destination doit comporté {{ limit }} caractère maximum"
+	 * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+	 * @Assert\NotBlank (message = "l'accroche doit être renseigner.")
      */
     private $hook;
 
     /**
      * @ORM\Column(type="string", length=255)
+	 * @Assert\NotBlank (message = "la description doit être renseigner.")
      */
     private $description;
 
     /**
      * @ORM\Column(type="float")
+	 * @Assert\NotBlank (message = "le prix doit être renseigner.")
      */
     private $price;
 
     /**
      * @ORM\Column(type="integer")
+	 * @Assert\NotBlank (message = "la durée doit être renseigner.")
      */
     private $duration;
 
     /**
      * @ORM\Column(type="string", length=255)
-     */
+	 */
     private $image1;
 
     /**

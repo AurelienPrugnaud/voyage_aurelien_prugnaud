@@ -31,7 +31,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $roles =
 		[
-		"ROLE_ADMIN"
+		"ROLE_USER"
 		];
 
     /**

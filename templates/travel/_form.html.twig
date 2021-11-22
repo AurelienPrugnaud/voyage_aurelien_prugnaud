@@ -1,4 +1,54 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_start(form, {'attr' : {'class' : ''}}) }}
+    <p>
+        {{ form_label(form.name, 'La destination') }}
+        {{ form_widget(form.name) }}
+    </p>
+    <p>
+        {{ form_label(form.hook, 'L\'accroche') }}
+        {{ form_widget(form.hook) }}
+    </p>
+    <p>
+        {{ form_label(form.description, 'La description') }}
+        {{ form_widget(form.description) }}
+    </p>
+    <p>
+        {{ form_label(form.price, 'Le prix') }}
+        {{ form_widget(form.price) }}
+    </p>
+    <p>
+        {{ form_label(form.duration, 'La durée') }}
+        {{ form_widget(form.duration) }}
+    </p>
+    <p>
+        {{ form_label(form.image1, 'Image') }}
+        {{ form_widget(form.image1) }}
+    </p>
+    <p>
+        {{ form_label(form.image2, 'Image') }}
+        {{ form_widget(form.image2) }}
+    </p>
+    <p>
+        {{ form_label(form.image3, 'Image') }}
+        {{ form_widget(form.image3) }}
+    </p>
+    <p>
+        {{ form_label(form.pdf, 'PDF') }}
+        {{ form_widget(form.pdf) }}
+    </p>
+    <p>
+        {{ form_label(form.category, 'Catégorie') }}
+        {{ form_widget(form.category) }}
+    </p>
+    <p>
+        {{ form_label(form.tag, 'Tag') }}
+        {{ form_widget(form.tag) }}
+    </p>
+    <ul>
+        {% if errors is defined %}
+            {% for error in errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
